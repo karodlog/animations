@@ -1,0 +1,122 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --couleur01: rgb(0, 113, 133);
+    --couleur02: #222;
+    --couleur03: #f1f1f1;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--couleur02);
+}
+
+/* navigation*/
+
+
+.navbar{
+    background: transparent;
+    height: 100px;
+    padding: 40px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    border-bottom: 5px solid transparent;
+    /* transition: 0.3s; */
+}
+
+.anim-nav{
+    background: var(--couleur01);
+    color: var(--couleur03);
+    border-bottom: 2px solid var(--couleur02);
+    animation: navigation 0.3s ease-out;
+    box-shadow: 0px 0px 20px var(--couleur02);
+}
+@keyframes navigation {
+    0%{
+        opacity: 0%;
+        transform: translateY(-100px);
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+.navbar a{
+    float: left;
+    padding: 12px;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.logo{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.navbar-right{
+    float: right;
+}
+.section{
+    width: 85%;
+    text-align: justify;
+    margin: 300px auto 50px;
+}
+h2{
+    font-size: 2rem;
+    color: var(--couleur01);
+    margin-bottom: 30px;
+}
+p{
+    user-select: none;
+}
+
+
+/* effet au clic */
+
+.clickAnim{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(var(--couleur03), var(--couleur01));
+    position: absolute;
+    z-index: 9000;
+    transform: scale(0);
+    transform-origin: center;
+    animation: clickAnim 2s ease-in-out;
+}
+@keyframes clickAnim {
+    0%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(2);
+        opacity: 1;
+    }
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+label, input{
+    display: block;
+    font-size: 2rem;
+    margin: 0 auto;
+    text-align: center;
+}
+input{
+    margin-top: 20px;
+    padding: 10px 50px;
+    outline: none;
+    border: 3px solid var(--couleur02);
+    margin-bottom: 100px;
+}
+span{
+    font-weight: bolder;
+    border-bottom: 2px solid var(--couleur01);
+}
